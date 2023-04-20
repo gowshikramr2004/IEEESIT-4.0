@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE SSIT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body id="jo" class="">
+
+    <!-- Background & animion & navbar & title -->
+
+    <header>
+        <nav class="
+             flex flex-wrap
+             items-center
+             justify-between
+             w-full
+             py-4
+             md:py-0
+             px-4
+             text-lg text-gray-700
+             dark:bg-gray-900
+           ">
+            <div>
+                <a href="#jo">
+                    <a href="#jo" class="flex items-center">
+                        <img src="./images/circle-play-solid.svg" class="h-8 mr-3" alt="Ieee Logo" />
+
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">IEE SSSIT </span>
+                    </a>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" class="h-6 w-6 cursor-pointer md:hidden block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 stroke-width="2"
+                 d="M4 6h16M4 12h16M4 18h16"
+               />
+             </svg>
+
+            <div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
+                <ul class="
+                 pt-4
+                 text-base text-gray-700
+                 md:flex
+                 md:justify-between 
+                 md:pt-0">
+                    <li>
+                        <a class="md:p-4 py-2 block hover:text-purple-400 dark:text-white " href="#abo">About</a
+                 >
+               </li>
+               <li>
+                 <a class="md:p-4 py-2 block hover:text-purple-400 dark:text-white" href="#proj"
+                   >Projects</a
+                 >
+               </li>
+               <li>
+                 <a class="md:p-4 py-2 block hover:text-purple-400 dark:text-white" href="#pot"
+                   >Events</a
+                 >
+               </li>
+               <li>
+                 <a class="md:p-4 py-2 block hover:text-purple-400 dark:text-white" href="#foot"
+                   >Contact Us</a
+                 >
+               </li>
+               <li>
+                 <a
+                   class="md:p-4 py-2 block hover:text-purple-400 text-purple-500"
+                   href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+                   >Join us</a
+                 >
+               </li>
+             </ul>
+           </div>
+       </nav>
+     </header>
+     
+    <!-- Background & animion & navbar & title 
+    <header id="navbar" style="position: relative;">
+        <nav class="navbar-container container">
+            <a href="/" class="home-link">
+                <div class="navbar-logo"></div>
+                IEEE SSIT
+            </a>
+                        <button type="button" class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbar-menu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+                        <div id="navbar-menu" class="detached">
+                            <ul class="navbar-links">
+                                <li class="navbar-item"><a class="navbar-link" href="#abo">About</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="#proj">Projects</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="#event ">Events</a></li>
+                                <li class="navbar-item"><a class="navbar-link" href="#foot">Contact</a></li>
+                            </ul>
+                        </div>
+        </nav>
+    </header>
+    -->
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="main">
+                <h1>We are Creative Club</h1>
+                <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="btn-main">Get Started.</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector('#menu-button');
+        const menu = document.querySelector('#menu');
+
+
+        button.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const navbar = document.getElementById("navbar");
+        const navbarToggle = navbar.querySelector(".navbar-toggle");
+
+        function openMobileNavbar() {
+            navbar.classList.add("opened");
+            navbarToggle.setAttribute("aria-expanded", "true");
+        }
+
+        function closeMobileNavbar() {
+            navbar.classList.remove("opened");
+            navbarToggle.setAttribute("aria-expanded", "false");
+        }
+
+        navbarToggle.addEventListener("click", () => {
+            if (navbar.classList.contains("opened")) {
+                closeMobileNavbar();
+            } else {
+                openMobileNavbar();
+            }
+        });
+
+        const navbarMenu = navbar.querySelector("#navbar-menu");
+        const navbarLinksContainer = navbar.querySelector(".navbar-links");
+
+        navbarLinksContainer.addEventListener("click", (clickEvent) => {
+            clickEvent.stopPropagation();
+        });
+
+        navbarMenu.addEventListener("click", closeMobileNavbar);
+
+        document
+            .getElementById("options")
+            .querySelectorAll("input[name='navtype']")
+            .forEach((option) => {
+                option.addEventListener("change", (e) => {
+                    const navType = e.target.id.split("-").join(" ");
+                    navbarMenu.classList = navType;
+                });
+            });
+
+        function rippleEffect(event) {
+            const btn = event.currentTarget;
+
+            const circle = document.createElement("span");
+            const diameter = Math.max(btn.clientWidth, btn.clientHeight);
+            const radius = diameter / 2;
+
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - (btn.offsetLeft + radius)}px`;
+            circle.style.top = `${event.clientY - (btn.offsetTop + radius)}px`;
+            circle.classList.add("ripple");
+
+            const ripple = btn.getElementsByClassName("ripple")[0];
+
+            if (ripple) {
+                ripple.remove();
+            }
+
+            btn.appendChild(circle);
+        }
+
+        const btn = document.getElementById("bt");
+        btn.addEventListener("click", rippleEffect);
+    </script>
+    < <div id="proj" class="flex flex-wrap justify-center">
+        <div class="flex justify-center items-center bg-gray-100 rounded-md shadow-md m-2 w-64 h-64 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72">
+            <div class="text-center">
+                <p class="text-gray-600 text-lg font-medium mb-2">Projects Completed</p>
+                <p class="text-3xl font-bold text-green-500">30</p>
+            </div>
+        </div>
+        <div class="flex justify-center items-center bg-gray-100 rounded-md shadow-md m-2 w-64 h-64 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72">
+            <div class="text-center">
+                <p class="text-gray-600 text-lg font-medium mb-2">Projects Doing</p>
+                <p class="text-3xl font-bold text-blue-500">15</p>
+            </div>
+        </div>
+        <div class="flex justify-center items-center bg-gray-100 rounded-md shadow-md m-2 w-64 h-64 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72">
+            <div class="text-center">
+                <p class="text-gray-600 text-lg font-medium mb-2">Projects Funded</p>
+                <p class="text-3xl font-bold text-yellow-500">50</p>
+            </div>
+        </div>
+        </div>
+        <div class="container mx-auto py-16">
+            <h2 class="text-3xl font-bold mb-8 text-center">My Projects</h2>
+            <div class="flex flex-wrap justify-center items-center">
+                <div class="max-w-sm rounded overflow-hidden shadow-lg m-4">
+                    <img class="w-full h-64 object-cover" src="./images/lifi.jpeg" alt="Project 1">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">PROJECT LIFI</div>
+                        <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+                <div class="max-w-sm rounded overflow-hidden shadow-lg m-4">
+                    <img class="w-full h-64 object-cover" src="project2.jpg" alt="Project 2">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Project 2</div>
+                        <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+                <div class="max-w-sm rounded overflow-hidden shadow-lg m-4">
+                    <img class="w-full h-64 object-cover" src="project3.jpg" alt="Project 3">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Project 3</div>
+                        <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 lg:px-8 py-12" id="abo">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="w-full lg:w-1/2 mb-12 lg:mb-0 lg:pr-6">
+                    <img src="./images/inaug.jpeg" alt=" Inauguration Image 600x400 " class="rounded-lg shadow-lg ">
+                </div>
+                <div class="w-full lg:w-1/2 ">
+                    <h2 class="text-3xl font-bold mb-4 ">Our Inauguration</h2>
+                    <p class="mb-6 ">The IEEE SSIT Club was inaugurated on [insert date] with Deepa Mam and some students. The event was held at [insert location] and was attended by a small group of students and faculty members. During the inauguration, Deepa Mam shared
+                        her vision for the IEEE SSIT Club and highlighted the importance of such initiatives in promoting technical education and research. She also encouraged the students to actively participate in the activities of the club and make
+                        the most of the opportunities provided..</p>
+                    <p class="mb-6 ">The students expressed their enthusiasm and interest in the club and shared their ideas and suggestions for future events and initiatives. The inauguration was followed by a brief interactive session, where the students had the opportunity
+                        to interact with Deepa Mam and discuss their ideas further. Overall, the inauguration of the IEEE SSIT Club was a successful and productive event that marked the beginning of a new chapter in the technical education and research
+                        of the institution..</p>
+                    <a href="https://www.srmist.edu.in/events/ieee-srmist-society-on-social-implication-of-technology-student-branch-chapter/" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200 ">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="container mx-auto px-2 pt-4 pb-12 ">
+            <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 " id="aboutus ">Our Team</h1>
+            <div class="w-full mb-4 ">
+                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t "></div>
+            </div>
+            <div class="flex flex-wrap ">
+                <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                    <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                        <a class="flex flex-wrap no-underline hover:no-underline ">
+                            <img src="./images/T.deepa1.jpg" alt="Member 1 " class="w-full h-64 object-cover ">
+                            <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Dr. Deepa T</div>
+                            <p class="text-gray-800 text-base px-6 mb-5 ">Faculty Advisor</p>
+                            <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from founder. "</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                    <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                        <a class="flex flex-wrap no-underline hover:no-underline ">
+                            <img src="./images/suryansh.jpg" alt="Member 2 " class="w-full h-64 object-cover ">
+                            <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Suryansh Sharma</div>
+                            <p class="text-gray-800 text-base px-6 mb-5 ">Chairperson</p>
+                            <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from co-founder. "</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                    <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                        <a class="flex flex-wrap no-underline hover:no-underline ">
+                            <img src="./images/Somak.jpg" alt="Member 3 " class="w-full h-64 object-cover ">
+                            <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Somak Gowshami</div>
+                            <p class="text-gray-800 text-base px-6 mb-5 ">Vice-Chairperson</p>
+                            <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from CEO. "</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+
+        <div class="flex flex-wrap ">
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/Taniska.jpg" alt="Member 1 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Tanishka Maheswari</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">General Secetary</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from founder. "</p>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/Akshay1.jpeg " alt="Member 2 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Akshay Panigrahi</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Co-General Secetary</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from co-founder. "</p>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/Divyansh1.jpg " alt="Member 3 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Divyansh Singhal </div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Research and Development Chairperson</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from CEO. "</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="flex flex-wrap ">
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/rohan1.jpg " alt="Member 1 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Rohan Gupta</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Technical Chairperson</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from CEO. "</p>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/Shubham.jpg " alt="Member 2 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Subham Saha</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Techical Advisor</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from CEO. "</p>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/Gowshik.jpg " alt="Member 3 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Gowshik Ram</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Technical Advisor</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from CEO. "</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+        </section>
+
+
+
+        <div class="flex flex-wrap ">
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/Shibi Peter1.jpg " alt="Member 1 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Shibi Peter </div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Aditorial Chairperson</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from founder. "</p>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/prasun1.jpg " alt="Member 1 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Prasoon Aghinotri</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Aditorial Advisor</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from founder. "</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/diya1.jpg " alt="Member 1 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Diya Sanghavi</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">PR Chairperson</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from founder. "</p>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/Sanskruti1.jpg " alt="Member 1 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Sanskruti More</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Creative Chairperson</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from founder. "</p>
+                    </a>
+                </div>
+            </div>
+
+
+
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/Aayush1.jpg " alt="Member 2 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Ayush Karshyap</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Event Manager</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from co-founder. "</p>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink ">
+                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg ">
+                    <a class="flex flex-wrap no-underline hover:no-underline ">
+                        <img src="./images/Manas.jpg " alt="Member 3 " class="w-full h-64 object-cover ">
+                        <div class="w-full font-bold text-xl text-gray-800 px-6 mt-4 ">Manas Singhal</div>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">Finance Chairperson</p>
+                        <p class="text-gray-800 text-base px-6 mb-5 ">"Quote from CEO. "</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section id="pot">
+            <div class="container mx-auto align-content-center px-4 ">
+                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 ">Events</h1>
+
+                <div class="flex flex-wrap gap-4 md:gap-8 ">
+
+                    <div class="w-full md:w-1/2 lg:w-1/3 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ">
+                        <img class="w-full h-auto " src="./images/market.JPG " alt="Event 1 ">
+                        <div class="p-4 " id="eve">
+                            <div class="font-bold text-xl mb-2 ">Event 1</div>
+                            <div class="text-gray-600 mb-2 ">August 10, 2022</div>
+                            <p class="text-gray-700 leading-snug ">
+                                On 10th March 2023, a Rural Women Entrepreneur Meet was organized by SSIT (Society of Social Implication of Technology) at SRMIST. The event aimed to create a platform for rural women entrepreneurs to come together, share their experiences, and discuss
+                                challenges and opportunities in their businesses. The event was attended by rural women entrepreneurs from different parts of the district. The attendees were from various fields such as agriculture, handicrafts, textiles,
+                                food processing, and many more. The participants were from different age groups and backgrounds, which made the event more diverse and enriching.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 lg:w-1/3 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ">
+                        <img class="w-full h-auto " src="./images/another.jpeg " alt="Event 2 ">
+                        <div class="p-4 ">
+                            <div class="font-bold text-xl mb-2 ">Event 1.2</div>
+                            <div class="text-gray-600 mb-2 ">August 10, 2022</div>
+                            <p class="text-gray-700 leading-snug ">The Women Entrepreneur Meet was a great success as it provided a platform for rural women entrepreneurs to come together, share their experiences, and learn from each other. The event was a step towards empowering rural women
+                                through entrepreneurship and creating a more inclusive and equitable society.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js "></script>
+        <!-- component -->
+        <!-- This is an my foot component -->
+        <footer class="bg-neutral-900 text-center text-white" id="foot">
+            <div class="container px-6 pt-6">
+                <div class="mb-6 flex justify-center">
+                    <a href="#!" type="button" class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0" data-te-ripple-init data-te-ripple-color="light">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                  </svg>
+                    </a>
+
+                    <a href="#!" type="button" class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0" data-te-ripple-init data-te-ripple-color="light">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  </svg>
+                    </a>
+
+                    <a href="#!" type="button" class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0" data-te-ripple-init data-te-ripple-color="light">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd" />
+                  </svg>
+                    </a>
+
+                    <a href="#!" type="button" class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0" data-te-ripple-init data-te-ripple-color="light">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                    </a>
+
+                    <a href="#!" type="button" class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0" data-te-ripple-init data-te-ripple-color="light">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                  </svg>
+                    </a>
+
+                    <a href="#!" type="button" class="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0" data-te-ripple-init data-te-ripple-color="light">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                    </a>
+                </div>
+
+
+
+                <div class="mb-6">
+                    <p>"Innovation is at the heart of our society, and together we can push the boundaries of what's possible. Join our club and be a part of the future we're creating!"
+
+
+                    </p>
+                </div>
+
+                <div class="p-4 text-center" style="background-color: rgba(0, 0, 0, 0.2)">
+                    © 2023 Copyright:
+                    <a class="text-white" href="https://tailwind-elements.com/">Gowshik Ram R</a
+              >
+            </div>
+          </footer>
+</body>
+
+</html>
